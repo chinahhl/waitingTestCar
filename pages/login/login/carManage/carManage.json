@@ -1,0 +1,7 @@
+{
+    "usingComponents": {},
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "车辆管理",
+    "navigationBarTextStyle": "black"
+}

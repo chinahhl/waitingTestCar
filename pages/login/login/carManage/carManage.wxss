@@ -1,0 +1,133 @@
+/* pages/login/login/carManage/carManage.wxss */
+page{
+  height: 100%;
+}
+.box{
+  height: 100%;
+}
+.box .top{
+  padding: 50rpx;
+}
+.select-warp{
+  display: flex;
+  color: #EE9A00;
+  height: 80rpx;
+  align-items: center;
+}
+.select{
+  flex: 0.3;
+  padding: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1rpx solid #f3f3f3;
+}
+.select-warp input{
+  flex: 0.8;
+  height: 60rpx;
+  padding: 10rpx;
+  border-top: 1rpx solid #f3f3f3;
+  border-right: 1rpx solid #f3f3f3;
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.select-scroll{
+  margin-top: 2rpx;
+  width: 187rpx;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  background: white;
+  border: 1rpx solid #EE9A00;
+}
+
+.select-list{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #f3f3f3;
+  color: #EE9A00;
+}
+.on-select-list{
+  color: white;
+  background: #EE9A00;
+}
+.yes{
+  border: 1rpx solid #EE9A00;
+}
+.btn{
+  height: 100rpx;
+  font-size: 1rem;
+  line-height: 100rpx;
+  color: #EE9A00;
+  margin-top: 40rpx;
+}
+.footer{
+  border-top: 1rpx solid #f3f3f3;
+}
+.footer-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  font-size: 0.8rem;
+  flex-wrap: wrap; /*超出换行*/
+  box-sizing: border-box;/*边框超出范围不往外扩*/
+}
+.footer-box .CarList{
+  height: 150rpx;
+  width: 400rpx;
+  text-align: left;
+  display: flex;
+  overflow: hidden;
+  border-radius: 8rpx;
+  border: 1rpx solid #EE9A00;
+  flex-basis: calc(55% - 45rpx);
+  position: relative;
+  margin-bottom: 8rpx;
+}
+.CarList-left{
+  display: flex;
+  flex: 2;
+  color: #EE9A00;
+  font-size: 0.8rem;
+  flex-direction: column;
+}
+
+.delCar{
+  flex: 0;
+  display: flex;
+  background: red;
+  align-items: center;
+  color: white;
+  justify-content: center;
+  opacity: 0;
+  position: relative;
+  width: 0rpx;
+  transition: all 0.3s;
+}
+.delCarHover{
+  opacity: 1;
+  flex: 1;
+  width: 85rpx;
+}
+.CarList-left-top{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: center;
+}
+.CarList-left-top image{
+  width: 85rpx;
+  height: 85rpx;
+}
+.CarList-left-bottom{
+  text-align: center;
+}
+.select-style{
+  background: #f3f3f3;
+}
+.select-del{
+  background: #EE4000;
+}
+.title{
+  color: #EE9A00;
+  font-size: 0.9rem;
+  padding: 10rpx;
+}

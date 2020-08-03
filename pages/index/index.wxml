@@ -1,0 +1,152 @@
+<!--pages/index/index.wxml-->
+<!-- 游客端 2-->
+<view class="MaxBox" wx:if="{{ UserType==2 }}">
+	<text>游客不可操作,请申请学员</text>
+</view>
+<!-- 学员端 -->
+<!-- 教练没打开签到显示的页面 -->
+<view class="NUll-Box" wx:if="{{ CheckOK==false && UserType != 1 }}">
+	<image src="./icon/null.svg" mode="widthFix" style="width: 400rpx; height: 400rpx;margin-bottom: 50rpx" />
+	<text>教练未打开签到排队</text>
+</view>
+<view class="Box-wrap" wx:if="{{ UserType==0 || UserType==2  }}" hidden="{{ CheckOK==true? '':true }}">
+	<!-- 顶部 -->
+	<view class="top">
+		<view class="topList">
+			<image src="{{ ThisUserInfo.usericon }}"></image>
+			<view class="right">
+				<view class="realName {{ ThisUserInfo==null? 'LoginStyle':'' }}"><text>{{ ThisUserInfo==null? '未登录':ThisUserInfo.realName }}</text></view>
+				<view class="Thisdate" style="border: 10rpx solid {{ testSpeed > Speeding?  '#E41625':'#3377FE' }};" wx:if="{{ InUserTestCarS != false }}">
+					 <!-- <text>{{ ThisUserInfo.userLoginTime.resultDate }}</text> testSpeed -->
+					<text class="{{ testSpeed > Speeding? 'Speeding':'' }}">{{ testSpeed==0? '--': testSpeed }}</text>
+					<text class="Km {{ testSpeed > Speeding? 'Speeding':'' }}">km/h</text>
+				</view>
+				<!-- 当前排名  wx:if="{{ isOkLineUp != false }}" ThisUserLineup-->
+				<view class="ThisLineUp" wx:if="{{ isOkLineUp != false && InUserTestCarS != true }}">
+					<text>当前排名</text>
+					<view class="ThisLineUpNumber">{{ ThisUserLineup }}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 中间 -->
+	<view class="center">
+		<view class="topTitle">
+			<view class="spot" style="background:{{ isOkBackColor }}"></view>
+			<text>签到排队。提示:(必须选择以下车辆才能排队)</text>
+		</view>
+		<view class="carList" wx:if="isLine == false" wx:for="{{ car }}" wx:key="item" data-carname="{{ item.carName }}" data-index="{{ index }}" data-cartb_id="{{ item._id }}" data-lineUpNumber="{{ item.LineUpNumber }}" bindtap="userSelectCar">
+			<view class="userSelectCar" style="background:{{ userSelectIndex===index? '#FFA500;border: 1rpx solid #FFA500;':'border: 1rpx solid #1195db;' }}">
+				<image src="./icon/{{ userSelectIndex===index? 'select_car':'car' }}.svg"></image>
+				<text style="display:block;color: {{ userSelectIndex===index? '#fff':'#1195ad' }};margin-top: -58rpx;">{{ item.carName }}</text>
+				<text style="color: {{ userSelectIndex===index? '#fff':'#1195db' }}">人数:{{ item.LineUpNumber }}</text>
+			</view>
+		</view>
+		<view class="center-radius" style="background:{{ isOkBackColor }}; box-shadow: 0rpx 0rpx 10rpx 1rpx {{ isOkBackColor  }};" bindtap="userlineUp">
+			<!-- 3种状态 没在定位点（灰色）、可以排队（绿色）、正在排队=>(取消排队)（蓝色） -->
+			<!-- 定位状态 -->
+			<text style="font-family: '微软雅黑';font-size:1.2rem;font-weight: bold;color:{{ isOkColor }}">{{ isOkStatus }}</text>
+			<!-- 现在时间 -->
+			<text style="margin-top: 10rpx;color:{{ '#D3D3D3' }}">{{ time }}</text>
+		</view>
+	</view>
+	<!-- 底部 -->
+	<view class="footer" wx:for="{{ IokClassLineUpInfo }}" wx:key="Last">
+		<!-- 排队等待区 -->
+		<view class="warting">
+			<view class="warting-spot"></view>
+			<text>{{ item.name }} 排队等待区</text>
+		</view>
+		<scroll-view class="wrap-InfoList" scroll-y="true">
+			<!-- 排队用户信息 -->
+			<view class="lineUpUserInfoList" wx:for="{{ item.list }}" wx:for-index="List" wx:key="Last">
+				<image src="{{ item.usericon }}"></image>
+				<view class="wartingUserInfo-left">
+					<view class="top-wartingUserInfo-left">
+						<text>{{ item.realName }}</text>
+						<image src="../login/login/agreeRequest/icon/{{ item.usergender==1? 'boy': 'girl' }}.svg"></image>
+						<text style="margin-left: 10rpx;font-size: 0.8rem">车辆：{{ item.carName }}</text>
+					</view>
+					<view class="bottom-wartingUserInfo-left">
+						<view class="lineUpTime" style="font-size: 0.7rem">开始排队时间: {{ item.LineUpTime }}</view>
+					</view>
+				</view>
+				<!-- 这是右边 -->
+				<view class="wartingUserInfo-right">
+					<view class="lineUpNumber" wx:if="{{ item.rank <= 3 }}"><text>{{ item.rank }}</text></view>
+					<view class="wartinglong" wx:if="{{ item.rank > 3 }}"><text>{{ item.rank }}</text></view>
+				</view>
+			</view>
+		</scroll-view>
+		<!-- <text>{{ thisUsertTu +""+ thisUserLo }}</text> -->
+	</view>
+</view>
+<!-- 教练端 -->
+<view class="CoachBox" wx:if="{{ UserType==1 }}">
+	<view class="Coach-top">
+		<button type="{{ CheckOK==true? 'warn': 'primary'}}" bindtap="setSignIn">{{ CheckOK==true? '关闭排队签到': '允许签到排队'}} </button>
+	</view>
+	<view class="Coach-centent">
+		<view class="Coach-centent-top">
+    <view class="Coach-center-top-wrap">
+			<view class="spot"></view>
+			<text>正在练车区</text>
+			<view class="solid"></view>
+      		<!-- 展开/收缩 -->
+				<view class="StudentNewTest-wrap" catchtap="showPull" data-index="0">
+						<image src="../index/icon/{{Isdwom==true && dwomIndex==0? 'top_pull':'dowm_pull' }}.svg"></image>
+				</view>
+		</view>
+</view>
+		<!-- 正在练车 list -->
+		<view class="StudentNewTest {{ Isdwom==true && dwomIndex==0? 'showList':'' }}">
+			<text class="Contentmsg" wx:if="{{ AllNowTestCarUser.length == 0 }}">暂无学员练车</text>
+			<scroll-view class="scroll-List" scroll-y="{{ Isdwom==true && dwomIndex==0? true:false }}" scroll-top="{{ Isdwom==true && dwomIndex==0? '':0 }}">
+				<!-- 正在练车用户信息  头像 真实名字 练车车号 性别-->
+				<view class="TestCarList" wx:for="{{ AllNowTestCarUser }}" wx:key="list" bindlongpress="onlongClick" data-OpenId="{{ item.OpenId }}" data-InRealName="{{ item.RealName }}" hover-class="onlongClick" hover-start-time="0">
+					<image src="{{ item.UserIcon }}" class="UserIcon"></image>
+					<text>{{ item.RealName }}</text>
+					<view class="TestCarNumber">{{ item.CarName }}</view>
+					<view class="UserSex-wrap">
+						<image class="UserSex" src="../login/login/agreeRequest/icon/{{ item.usergender==1? 'boy': 'girl' }}.svg"></image>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+		<!-- 等待区 -->
+		<view class="Coach-centent-top" wx:for="{{ IokClassLineUpInfo }}" wx:key="Last">
+			<view class="Coach-center-top-wrap">
+				<view class="spot"></view>
+				<text>[{{ item.name }}] 学员等待区</text>
+				<view class="solid"></view>
+				<!-- 展开/收缩 -->
+				<view class="StudentNewTest-wrap" catchtap="showPull" data-index="1">
+						<image src="../index/icon/{{Isdwom==true && dwomIndex==1? 'top_pull':'dowm_pull' }}.svg"></image>
+				</view>
+			</view>
+			<scroll-view scroll-y="{{Isdwom==true && dwomIndex==1? true:false }}" style="height:442rpx">
+				<!-- 排队用户信息 -->
+				<view class="lineUpUserInfoList" wx:for="{{ item.list }}" wx:for-index="List" wx:key="Last">
+					<image src="{{ item.usericon }}"></image>
+					<view class="wartingUserInfo-left">
+						<view class="top-wartingUserInfo-left">
+							<text>{{ item.realName }}</text>
+							<image src="../login/login/agreeRequest/icon/{{ item.usergender==1? 'boy': 'girl' }}.svg"></image>
+							<text style="margin-left: 10rpx;font-size: 0.8rem">车辆：{{ item.carName }}</text>
+						</view>
+						<view class="bottom-wartingUserInfo-left">
+							<view class="lineUpTime" style="font-size: 0.7rem">开始排队时间: {{ item.LineUpTime }}</view>
+						</view>
+					</view>
+					<!-- 这是右边 -->
+					<view class="wartingUserInfo-right">
+						<view class="lineUpNumber" wx:if="{{ item.rank <= 3 }}"><text>{{ item.rank }}</text></view>
+						<view class="wartinglong" wx:if="{{ item.rank > 3 }}"><text>{{ item.rank }}</text></view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</view>
+<toast id="toast" wx:if="{{ toastShow == true }}"></toast>
+<Actionsheet bindactiontap="btnClick" show="{{showActionsheet}}" actions="{{groups}}" title="是否要让[ {{ longSelectSudentName }} ]学员下车！"></Actionsheet>

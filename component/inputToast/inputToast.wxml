@@ -1,0 +1,18 @@
+<view class="Box" >
+  <view class="UserMsg"  animation="{{setUi}}">
+    <view class="title">
+    <text>{{ title }}</text>
+  </view>
+  <view class="content-text">
+    <input type="text" class="UserInput"  placeholder="请输入真实名字" cursor-spacing="150" bindinput="UserInputName" auto-focus="true" />
+  </view>
+  <view class="footer-btn">
+    <view class="cancel" data-index="0" hover-class="click-hover" hover-stay-time="150" bindtap="resultInputToast">
+      <text>取消</text>
+    </view>
+    <view class="confirm" data-index="1" hover-class="click-hover" hover-stay-time="150" bindtap="resultInputToast">
+      <text>确认</text>
+    </view>
+  </view>
+  </view>
+</view>

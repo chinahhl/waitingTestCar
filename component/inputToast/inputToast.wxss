@@ -1,0 +1,54 @@
+.Box{
+  height: 100%;
+}
+.UserMsg{
+  width: 500rpx;
+  height: 330rpx;
+  background: white;
+  overflow: hidden;
+  border-radius: 12rpx;
+  position: absolute;
+  /* transform: translate(-100%,-100%); */
+  top: 50%;
+  z-index: 9999;
+  left: 50%;
+  margin-left: -250rpx;
+  margin-top: -175rpx;
+  /* opacity: 0; */
+  transform: scale(0)
+}
+.title{
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 20rpx;
+  color: white;
+  background: #1B97F3;
+}
+.content-text{
+  height: 80rpx;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #e4e4e4;
+}
+.content-text .UserInput{
+  height: 100%;
+  padding-left: 20rpx;
+  border: 1rpx solid #e4e4e4;
+}
+.footer-btn{
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.footer-btn .cancel{
+  flex: 1;
+  border-right: 1rpx solid #e4e4e4;
+  color: red;
+}
+.footer-btn .confirm{
+  flex: 1;
+  color: green;
+}
+.click-hover{
+  background: #e4e4e4;
+}

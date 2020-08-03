@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "toast": "../../component/toast/toast",
+    "Actionsheet": "../../component/actionsheet/actionsheet"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "navigationBarBackgroundColor": "#FE5455",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "个人中心",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true,
+    "usingComponents":{
+      "toast": "../../component/toast/toast",
+      "inputToast": "../../component/inputToast/inputToast",
+      "userInfo": "../../component/userInfo/userInfo",
+      "msg": "../../component/msg/msg",
+      "authorization": "../../component/authorization/authorization"
+    }
+}

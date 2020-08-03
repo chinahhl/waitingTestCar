@@ -1,0 +1,56 @@
+/* pages/authorization/authorization.wxss */
+
+.box-wrap{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+}
+.box{
+  width: 600rpx;
+  height: 500rpx;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  background: #ffff;
+}
+.box .close{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 12rpx;
+  top: 7rpx;
+}
+.box-top{
+  display: flex;
+  justify-content: center;
+}
+.box-content{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.box-bottom{
+  display: flex;
+  justify-content: center;
+}
+.Login{
+  width: 550rpx;
+  position: absolute;
+  bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wxicon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}

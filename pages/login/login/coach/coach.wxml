@@ -1,0 +1,62 @@
+<!--pages/login/login/coach/coach.wxml-->
+<!-- 顶部搜索区域 -->
+<view class="topSearch">
+  <view class="Search-warp">
+    <input class="coach-input" placeholder="请输入要搜索学员的名字" bindinput="searchName" />
+    <view class="Search-btn" bindtap="onSecarhStudent">搜索</view>
+  </view>
+</view>
+<!-- 学员显示区域 -->
+<!-- 显示所有学员的信息
+  1.-学员的头像 => 微信头像（已实现）
+    -学员的昵称 => 微信昵称 （已实现）
+    -用户的名字 => 真实名字（已实现）
+    -用户的性别 => 真实性别（已实现）
+    -用户今天是否已练车 => (有待实现）
+    -该学员是否在练车状态丶(练车车号=>车牌号)
+  2.-------教练可操作-------
+    1.删除学员
+    2.搜索学员
+    3该学员，暂时不可练车状态 hideUserAll-Info
+ -->
+<view wx:for="{{ allUserInfo }}" wx:key="item" wx:if="{{ item.type == 0 }}"  class="UserAll-Info {{ UserList_data_index===index? '': 'hideUserAll-Info'}}"  bindtap="UserOnclick" data-index="{{ index }}" >
+  <view class="one-list">
+    <!-- 学员的头像 -->
+     <image class="User-Icon" src="{{ item.usericon }}"></image>
+      <view class="list">
+          <view class="list-top">
+            <text class="nikeName">{{ wxname[index] }}</text>
+            <text class="realName">姓名：{{ item.realName==''? '未填写': item.realName }}</text>
+            <text class="sex">性别：{{ item.usergender==1? "男" :"女" }}</text>
+          </view>
+      </view>
+  </view>
+
+  <!-- hideUserAll-Info-warp -->
+  <view class="UserAll-Info-warp">
+     <!-- 今天是否练车显示区域 -->
+    <view class="content-text padd">
+      <text class="ThisDayIsCar" style="margin-right: 20rpx;">今天是否已练车</text>
+      <view class="toDaytestCar {{ item._thisDayTestcar==true? 'statusColor':'' }}">{{ item._thisDayTestcar==true? '已练车':'未练车' }}</view>
+      <!-- <text class="TestCarTimes">已练车时长：320小时</text> -->
+    </view>
+    <view class="NowTestCar padd">
+      <view class="todyTestCar">
+      <text style="margin-right: 20rpx;">是否正在练车中</text>
+      <view class="toDaytestCar {{ item.NewTestCar==true? 'statusColor':'' }}">{{ item.NewTestCar==true? '正在练车':'否' }}</view>
+      </view>
+      <view class="todyTestCarName">
+        <text style="line-height: 50rpx;">练车车号</text>
+        <view class="CarCodeBg">{{ item.TestCarName==undefind? '无':item.TestCarName }}</view>
+      </view>
+    </view>
+     <!-- 底部按钮部分  -->
+    <view class="btn-footr">
+      <view class="stopUserTestCar {{ item.stopTestcar==0? '':'statusColor' }}" data-tb_id="{{ item._id }}" data-IsTestCarstatus="{{ item.stopTestcar }}" catchtap="stop_or_UserTestcar">{{ item.stopTestcar==0? '暂停练车':'允许练车' }}</view>
+      <view class="delUserData stopUserTestCar" data-tb_id="{{ item._id }}" catchtap="deluser">删除学员</view>
+    </view>
+  </view>
+  </view>
+  <toast id="toast" wx:if="{{ showToast == true }}"></toast>
+
+  

@@ -1,0 +1,14 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="UserInfoBox">
+  <view class="UserInfo" animation="{{setUi}}">
+   <view class="topcoles"><text>我的信息</text><image class="img" src="../../icon/erro1.png" catchtap="oncloesUserInfo"></image></view>
+      <scroll-view style="height: 800rpx;"  scroll-y="true">
+       <!-- 个人信息部分 -->
+        <view class="listInfo" ><text>真实名字：{{ userdata.realName }}</text></view>
+        <view class="listInfo" ><text>性别：{{ userdata.usergender == 1? '男':'女' }}</text></view>
+        <view class="listInfo" ><text>今天是否已练车：{{ userdata._thisDayTestcar==true? '已练车':'未练车' }}</text></view>
+        <!-- <view class="listInfo" ><text>累计练车时长：{{ '0.5' }} /小时</text></view> -->
+        <view class="listInfo" ><text>注册时间：{{ userdata.userRegisterTime.resultDate+'  '+userdata.userRegisterTime.resultTime }}</text></view>
+      </scroll-view>
+  </view>
+</view>

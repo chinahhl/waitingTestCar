@@ -1,0 +1,155 @@
+/* pages/login/login.wxss */
+/* bfbfbf  515151 */
+.content-buttonn{
+  height: 100%;
+}
+.content-buttonn button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+page{
+  width: 100%;
+  height: 100%;
+  background:#F4F4F4; 
+}
+.UIBox{
+  width: 100%;
+  height: 100%;
+}
+.BoxTitle{
+  display: flex;
+  height: 200rpx;
+  padding: 40rpx;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  background:#FE5455;
+}
+.UserLogin{
+  position: relative;
+  display: inline;
+  left: 170rpx;
+  margin: 0;
+  padding: 0;
+  top: 16rpx;
+  background: none;
+}
+.userinfo{
+  display: flex;
+  flex-direction: column;
+}
+button::after{
+  border: none;
+}
+.BoxTitle text:last-child{
+  font-size: 0.76rem;
+}
+
+.UserIcon{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  z-index: 2;
+  overflow: hidden;
+  margin-right: 16rpx;
+  border: 1px solid hsl(0, 7%, 92%);
+  background: hsl(0, 7%, 92%);
+}
+.UserIcon image{
+  width: 100%;
+  height: 100%;
+}
+.boxContent{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+.TabeList{
+  width: 96%;
+  height: 100rpx;
+  background: white;
+  position: relative;
+  left: 2%;
+  right: 2%;
+  z-index: 9;
+  margin-bottom: 20rpx;
+  line-height: 100rpx;
+  color: #515151;
+  font-size: 0.8rem;
+  border-radius: 10rpx;
+}
+
+.TabeList image{
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.TabeList .font-ctrl{
+  margin-left: 30rpx;
+}
+/* 已实名的颜色 */
+.real_name{
+  color: green;
+}
+/* 未实名的颜色 */
+.no_real_name{
+  color: #FE5455;
+}
+.UserOutLogin{
+  position: absolute;
+  bottom: 0;
+}
+.TabeList .userType{
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  text-align: center;
+  margin-left: 30rpx;
+  color: white;
+  border-radius: 12rpx;
+}
+ /* 小泡泡 */
+.TabeList .Bubble{
+  width: 45rpx;
+  height: 45rpx;
+  display: inline-block;
+  border-radius: 50%;
+  line-height: 45rpx;
+  text-align: center;
+  color: white;
+  position: relative;
+  left: 30rpx;
+  background: #FF3030;
+}
+/* 教练 */
+.iscach{
+  background: #FFBF00;
+}
+/* 学员 */
+.students{
+  background:#4395ff;
+}
+/* 游客 */
+.tourist{
+  background: #FE5455;
+}
+/* 未登录 */
+.noLogin{
+  background: #c3c0c0;
+}
+.BoxTitle .showA{
+  font-size: 0.95rem;
+}
+.font-color{
+  color: #FE5455;
+  margin-left: 10rpx;
+}
+.localctionOk{
+  color:green;
+}

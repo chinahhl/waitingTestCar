@@ -1,0 +1,20 @@
+<!--pages/authorization/authorization.wxml-->
+<view class="box-wrap" animation="{{setUi}}">
+  <view class="box">
+    <!-- <button class="btn" type="primary" disabled="{{ btn===true? true:false }}" open-type="getUserInfo" bindgetuserinfo="toUrl">授权并登录</button> -->
+    <image class="close" src="./icon/error.svg" mode="widthFix" bindtap="closeAuthorization"></image>
+    <view class="box-top">
+      <image src="./icon/appIcon.jpg" mode="widthFix" style="width:150rpx;height:150rpx"></image>
+    </view>
+    <view class="box-content">
+      <text>使用此功能需要登录/注册</text>
+      <text style="font-weight: bold;margin-top:20rpx">您确认要登录吗？</text>
+    </view>
+    <view class="box-bottom">
+      <button class="Login" type="primary" open-type="getUserInfo" bindtap="showLoginToast" bindgetuserinfo="tapLogin">
+        <image  class="wxicon" src="./icon/wxIcon.svg"></image>
+        <text>微信快速登录</text>
+      </button>
+    </view>
+  </view>
+</view>

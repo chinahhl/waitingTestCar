@@ -1,0 +1,65 @@
+<!--pages/login/login.wxml wx:if="{{userLoginSatuts==1}}"-->
+<authorization id="authorization" bind:HideAuthorization="hideA" bind:responesUserInfo="getuserAuthorizationinfo" wx:if="{{ showauthorization==true }}"></authorization>
+<view class="UIBox" >
+  <view class="BoxTitle">
+  <view  class="UserIcon" bindtap="dellocaltionData">    
+      <image src="{{ userIcon }}"></image>
+  </view>
+    
+    <view class="showA" bindtap="showA" wx:if="{{ userLoginSatuts != 1 }}">登录/注册</view>
+    <view class="userinfo">
+      <text wx:if="{{ userLoginSatuts == 1 }}">{{ userName }}</text>
+      <text wx:if="{{ userLoginSatuts == 1 }}">{{ userLogin_time }} </text> 
+    </view>
+  </view>
+  <view class="boxContent">
+    <view class="TabeList" bindtap="ShowUserInfo">
+      <image src="../../icon/User_Msg.svg" mode="widthFix" ></image>
+      <text>个人信息</text>
+      <text class="userType students" wx:if="{{ type==0 }}">学员</text>
+      <text class="userType iscach"  wx:elif="{{ type==1 }}">教练</text>
+      <text class="userType tourist" wx:elif="{{ type==2 }}">游客</text>
+      <text class="userType noLogin" wx:else>未登录</text>
+    </view>
+    <view class="TabeList" bindtap="ToUser_Manage" wx:if="{{ type == 1 }}">
+      <image src="../../icon/Manage_User.png" mode="widthFix"></image>
+      <text>学员管理</text>
+    </view>
+    <!-- 教练同意申请 -->
+    <view class="TabeList" bindtap="onAgreeRequest" wx:if="{{ type == 1 }}">
+      <image src="../../icon/studentRequest.svg" mode="widthFix"></image>
+      <text>审批申请</text>
+      <!-- 信息提示条数 -->
+      <view wx:if="{{ userRquestNumber > 0 }}" class="Bubble">{{ userRquestNumber }}</view>
+    </view>
+    <!-- 车辆管理 -->
+    <view class="TabeList" bindtap="CarManage"  wx:if="{{ type == 1 }}">
+      <image src="../../icon/CarManage.svg" mode="widthFix"></image>
+      <text>车辆管理</text>
+      <!-- <text class="font-color {{ userSetLocalction!=''? 'localctionOk':''}}">{{ thisuserL }}</text> -->
+    </view>
+    
+    <!-- 练车位置获取位置 -->
+    <view class="TabeList" bindtap="setLocaltionInfo" wx:if="{{ type == 1 }}">
+      <image src="../../icon/Localtion_Icon.svg" mode="widthFix"></image>
+      <text>练车位置设置</text>
+      <text class="font-color {{ userSetLocalction!=''? 'localctionOk':''}}">[{{ userSetLocalction!=""? '点击重新设置': '未设置位置'}}]</text>
+    </view>
+
+    <!-- 游客才显示，其他不显示 --> 
+    <view class="TabeList" bindtap="setUserName" wx:if="{{ type == 2 }}">
+      <image src="../../icon/UserName.png" mode="widthFix"></image>
+      <text>真实姓名填写</text>
+      <text class="font-ctrl {{ realName==''? 'no_real_name':'real_name' }}">[{{ realName==''? '未填写':'已填写' }}]</text>
+    </view>
+    <view class="TabeList" wx:if="{{ type == 2 }}">
+      <button type="warn" bindtap="onApplyIsStudent" disabled="{{ isokName }}">{{ isApply==true? '申请中...':'申请成为学员'}}</button> 
+    </view>
+  </view>
+</view>
+<!-- 插件引用部分 -->
+  <toast id="toast" wx:if="{{ toastShow == true }}"></toast>
+  <inputToast id="inputToast" bind:ResultInputToast="getInputToastValue" wx:if="{{ inputToastShow==true }}"></inputToast>
+  <userInfo id="userInfo" bind:UserInfoShow="ResultUserInfoShow" wx:if="{{ UserInfoShow==true }}"></userInfo>
+  <msg id="msg" wx:if="{{ MsgShow==true }}"></msg>
+<!-- wx:if="{{ UserInfoShow == true }}" -->

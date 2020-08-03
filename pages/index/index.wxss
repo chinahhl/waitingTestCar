@@ -1,0 +1,369 @@
+/* pages/index/index.wxss */
+page{
+  height: 100%;
+}
+.top{
+  height: 100rpx;
+  padding-top: 15rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.topList image{
+  width:100rpx;
+  height:100rpx;
+  background:#f5f5f5;
+  border-radius: 50%;
+}
+.top .topList{
+  display: flex;
+  position: relative;
+}
+.topList .right{
+  display: flex;
+  line-height: 100rpx;
+}
+.topList .ThisLineUp{
+  /* background: red; */
+  display: flex;
+  margin-left: 10rpx;
+  font-size: 0.85rem;
+  align-items: center;
+}
+.ThisLineUp .ThisLineUpNumber{
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-left: 10rpx;
+  border-radius: 12rpx;
+  color: white;
+  background: #2E8B57;
+}
+.right .realName{
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  font-family: '微软雅黑';
+  font-size: 1rem;
+}
+.right .Thisdate{
+  position: absolute;
+  flex-wrap: wrap;
+  right: 0;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 35rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #3377FE;
+  font-weight: bold;
+  border: 10rpx solid #3377FE;
+  font-family: '微软雅黑';
+  font-size: 1.3rem;
+}
+.Thisdate .Km{
+  /* #E41625 */
+   font-size: 0.8rem;
+}
+
+.Speeding{
+  color: #E41625;
+}
+.center{
+  /* height: 500rpx; */
+  padding: 50rpx 30rpx 50rpx 30rpx;
+  /* background: rebeccapurple; */
+  position: relative;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.center .topTitle{
+  height: 80rpx;
+  background: white;
+  font-family: '微软雅黑';
+  font-size: 0.9rem;
+}
+.topTitle .spot{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  border-radius: 50%;
+  background: #D3D3D3;
+}
+.center .carList{
+  padding: 20rpx;
+  display: inline-block;
+  /* background-color: brown; */
+  position: relative;
+}
+.carList .userSelectCar{
+  height: 130rpx;
+  width: 250rpx;
+  /* background: green; */
+  border: 1rpx solid #1195db;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+  /* position: absolute; */
+  overflow: hidden;
+  font-family: '微软雅黑';
+  font-size: 0.7rem;
+  text-align: center;
+}
+.userSelectCar image{
+  width: 100px;
+  height: 100rpx;
+  left: 7rpx;
+  top: -20rpx;
+  position: relative;
+}
+
+.center .center-radius{
+  width: 300rpx;
+  height: 300rpx;
+  box-shadow: 0rpx 0rpx 30rpx 1rpx #A9A9A9; 
+  display: flex;
+  justify-content: center;
+  margin: 30rpx auto;
+  flex-direction: column;
+  text-align: center;
+  font-family: '微软雅黑';
+  font-size: 0.9rem;
+  border-radius: 50%;
+  position: relative;
+}
+.footer{
+  height: 600rpx;
+  padding: 50rpx 50rpx 30rpx;
+  /* background: #A9A9A9; */
+}
+.footer .wrap-InfoList{
+  height:500rpx; 
+  border-radius: 12rpx;
+  /* overflow: hidden; */
+  /* background:  #dddfe4; */
+  
+}
+.footer .warting{
+  height: 50rpx;
+  /* margin-top: 30rpx; */
+  margin-bottom: 50rpx;
+  font-family: '微软雅黑';
+  font-size: 0.9rem;
+}
+.lineUpUserInfoList{
+  display: flex;
+  /* 200rpx; */
+  height: 100rpx;
+  padding: 20rpx;
+  margin-bottom: 10rpx;
+  /* border-radius: 12rpx; */
+  border-bottom: 1rpx solid #dddfe4;
+  background: white;
+}
+.lineUpUserInfoList image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  background:#f5f5f5;
+}
+.warting .warting-spot{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  display: inline-block;
+  background: #FF8C00;
+}
+.wartingUserInfo-left{
+  display: flex;
+  flex: 1.5;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  flex-direction: column;
+}
+
+.top-wartingUserInfo-left image{
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  /* justify-items: center; */
+  /* justify-content: center; */
+  background: none;
+}
+
+.wartingUserInfo-right{
+  display: flex;
+  padding-right: 10rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wartingUserInfo-right .lineUpNumber{
+  width: 80rpx;
+  height: 50rpx;
+  font-size: 0.8rem;
+  line-height: 50rpx;
+  text-align: center;
+  color: white;
+  border-radius: 5rpx;
+  background: #2E8B57;
+}
+/* 点击变色  #228B22*/
+.isBackgroun{
+  background: white;
+}
+.wartinglong{
+  width: 80rpx;
+  height: 50rpx;
+  font-size: 0.8rem;
+  line-height: 50rpx;
+  text-align: center;
+  color: white;
+  border-radius: 5rpx;
+  background: #FF8C00;
+}
+/* 教练端 */
+.CoachBox{
+  height: 100%;
+  background:#f5f5f5;
+  padding: 20rpx;
+  overflow: hidden;
+}
+.Coach-top{
+  padding: 20rpx 40rpx;
+}
+.Coach-centent-top{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: center; */
+}
+.Coach-center-top-wrap{
+  display: flex;
+  color: green;
+  margin: 15rpx 0 15rpx 0;
+  align-items: center;
+}
+.Coach-centent-top .spot{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background: green;
+}
+.Coach-centent-top text{
+  margin: 0 15rpx;
+}
+.Coach-centent-top .solid{
+  width: auto;
+  height: 2rpx;
+  flex: 3;
+  background:#C7C7C7;
+}
+.StudentNewTest{
+  width: 100%;
+  height: 200rpx;
+  overflow: hidden;
+  background: white;
+  transition: all 0.4s;
+  margin-bottom: 30rpx;
+}
+.TestCarList{
+  display: flex;
+  height: 200rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  align-items: center;
+}
+.UserIcon{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.TestCarList text{
+  font-size: 1.25rem;
+  font-family: "黑体";
+  flex: 1;
+  padding-left: 10rpx;
+}
+.TestCarList .TestCarNumber{
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex: 1.5;
+  color: #EE9A00;
+}
+.UserSex-wrap{
+  flex: 0.3;
+}
+.UserSex-wrap .UserSex{
+  width: 70rpx;
+  height: 70rpx;
+  flex: 0.5;
+}
+.scroll-List{
+  height: 500rpx;
+}
+.StudentNewTest-wrap{
+  height: 50rpx;
+  bottom: 10rpx;
+}
+.StudentNewTest-wrap image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.showList{
+  height: 500rpx;
+}
+.onlongClick{
+  background: #EAEAEA;
+}
+.Contentmsg{
+  width: 100%;
+  display: block;
+  height: 200rpx;
+  text-align: center;
+  line-height: 200rpx;
+  font-size: 1.5rem;
+  color: #C7C7C7;
+}
+.textMsg{
+  display: block;
+  width: 100%;
+  height: 750rpx;
+  text-align: center;
+  line-height: 750rpx;
+  color: #C7C7C7;
+}
+.NUll-Box{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #cdcdcd;
+}
+/* 未登录时的名字 */
+.LoginStyle{
+  color: #cdcdcd;
+}
+/* 游客 */
+.MaxBox{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  color: #666;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.7rem;
+  z-index: 9999999;
+}

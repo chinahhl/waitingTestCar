@@ -1,0 +1,13 @@
+/* component/msg/msg.wxss */
+.box .img{
+  width: 300rpx;
+  height: 300rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  margin-top: -150rpx;
+  margin-left: -150rpx;
+  opacity: 0;
+  transform: scale(0);
+}

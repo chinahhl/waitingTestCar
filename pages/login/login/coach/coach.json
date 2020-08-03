@@ -1,0 +1,11 @@
+{
+"navigationBarBackgroundColor": "#FE5455",
+"navigationBarTextStyle": "white",
+"navigationBarTitleText": "学员管理中心",
+"backgroundColor": "#eeeeee",
+"backgroundTextStyle": "light",
+"enablePullDownRefresh": true,
+"usingComponents": {
+    "toast": "../../component/toast/toast"
+  }
+}

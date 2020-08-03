@@ -1,0 +1,183 @@
+/* pages/login/login/coach/coach.wxss */
+page{
+  height: 100%;
+  background: #f8f8f8;
+}
+.topSearch{
+  height: 140rpx;
+  /* margin-left: 2.5%;
+  margin-right: 2.5%; */
+  background: white;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+  border-radius: 20rpx;
+  padding-top: 60rpx;
+  margin: 20rpx 2.5% 20rpx 2.5%;
+  
+
+}
+.Search-warp{
+ height: 80rpx;
+ display: flex;
+ flex: 2;
+  position: relative;
+  overflow: hidden;
+}
+.coach-input{
+  flex: 1.5;
+  height: 76rpx;
+  border: 1rpx solid #4B96BD;
+  border-right: none;
+  padding-left: 30rpx;
+  border-bottom-left-radius: 10rpx;
+  border-top-left-radius: 10rpx;
+  font-size: 0.8rem;
+}
+ .Search-btn{
+   flex: 0.5;
+   height: 80rpx;
+   line-height: 80rpx;
+   text-align: center;
+   color:white;
+   border-radius:  0 10rpx 10rpx 0;
+   background: #4B96BD;
+}
+/* 学员显示区域 */
+.UserAll-Info{
+  height: 350rpx;
+  background: white;
+  font-size: 0.8rem;
+  padding-top: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  transition: all 0.4s;
+  overflow: hidden;
+  }
+
+  .one-list{
+    display: flex;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30rpx;
+  }
+.User-Icon{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.list{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.list-top{
+  flex: 1;
+  align-items: center;
+  display: flex;
+}
+.nikeName{
+  flex: 2;
+  padding-left: 15rpx;
+}
+.realName{
+  flex: 2;
+}
+.list-bottom{
+  flex: 1;
+  display: flex;
+  /* 垂直居中 */
+  align-items: center; 
+}
+.content-text{
+  display: flex;
+  flex: 2;
+}
+.ThisDayIsCar{
+  /* flex: 0.42; */
+  text-align: left;
+}
+.TestCarTimes{
+  flex: 1;
+  text-align: right;
+}
+.NowTestCar{
+  display: flex;
+  position: relative;
+  margin-top: 15rpx;
+  align-items: center;
+}
+.TestCar{
+  flex: 0.55;
+}
+.CarCode{
+  flex: 0.42;
+  text-align: right;
+}
+.padd{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+/* 底部 */
+.btn-footr{
+  display: flex;
+  justify-items: right;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+}
+.stopUserTestCar{
+  width: 140rpx;
+  height: 60rpx;
+  color: white;
+  text-align: center;
+  line-height: 60rpx;
+  background: #FF8324;
+  font-size: 0.8rem;
+  border-radius: 8rpx;
+}
+.delUserData{
+  background: #CE1D15;
+  margin-left: 40rpx;
+}
+/* js需要的css */
+.hideUserAll-Info{
+  height: 128rpx; 
+}
+.hideUserAll-Info-warp{
+  opacity: 0;
+}
+.toDaytestCar{
+  width: 135rpx;
+  height: 50rpx;
+  color: white;
+  text-align: center;
+  border-radius: 5rpx;
+  line-height: 50rpx;
+  background: #FA5151;
+}
+.todyTestCar{
+  display: flex;
+}
+.todyTestCarName{
+  display: flex;
+  position: absolute;
+  right: 25rpx;
+}
+.CarCodeBg{
+  width: 150rpx;
+  height: 50rpx;
+  color: white;
+  border-radius: 5rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-left: 15rpx;
+  background: #FFA500;
+}
+.statusColor{
+  background: #07c160;
+}

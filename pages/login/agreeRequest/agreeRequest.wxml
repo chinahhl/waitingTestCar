@@ -1,0 +1,25 @@
+<!--pages/login/login/agreeRequest/agreeRequest.wxml-->
+<view class="Box">
+  <view class="UserInfoList" wx:for="{{ requestData }}" wx:key="item">
+    <image src="{{ item.usericon }}"></image>
+    <view class="InfoList">
+      <view class="InfoList-top">
+        <text>{{ item.realName}}</text>
+        <image src="./icon/{{ item.usergender==2? 'girl.svg':'boy.svg' }}"></image>
+      </view>
+      <view class="InfoList-center">
+       <text>{{ item.username }}</text>
+      </view>
+      <!-- <view class="InfoList-bottom">
+        
+      </view> -->
+      ???
+    </view>
+    <view class="InfoReight">
+      <!-- 同意 -->
+      <view class="yes" bindtap="UserOk" data-btn="yes" data-tb_id="{{ item._id }}">同意</view>
+      <!-- 拒绝 -->
+      <view class="no" bindtap="UserNo" data-btn="no" data-tb_id="{{ item._id }}">拒绝</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<!--component/msg/msg.wxml-->
+<view class="box" >
+  <image class="img" src="./icon/{{ icon }}.svg" mode="widthFix" animation="{{setUi}}"></image>
+</view>

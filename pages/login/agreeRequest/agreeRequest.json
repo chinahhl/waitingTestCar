@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#FE5455",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "审批申请",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "usingComponents": {}
+}

@@ -1,0 +1,31 @@
+<!--pages/login/login/carManage/carManage.wxml-->
+<view class="box">
+  <view class="top">
+    <view class="top-wrap">
+      <!-- 下拉操作 -->
+      <view class="select-warp">
+        <view class="select {{ listShow? 'yes': ''}}" catchtap="myclick">{{ selectCode }}</view>
+        <input type="text" placeholder="请输入车辆号码" placeholder-class="onInput" bindinput="userinputCarCode" maxlength="5"></input>
+      </view>
+      <!-- 下拉需要显示的列表 -->
+        <scroll-view class="select-scroll" scroll-y="true" style="height: 300rpx;" wx:if="{{ listShow }}">
+          <view bindtap="_thisClick" class="select-list" hover-class="on-select-list" hover-stay-time="100"  wx:for="{{ code }}" wx:key="item" data-name="{{ item }}">{{ item }}</view>
+        </scroll-view>
+    </view>
+    <button class="btn" bindtap="addTestCar">添加车辆</button>
+  </view>
+  <view class="footer">
+  <view class="title">已添加:{{ addOKCar.length }} 辆</view>
+    <view class="footer-box">
+      <view class="CarList" wx:for="{{ addOKCar }}" wx:key="item" bindlongpress="longClick" catchtap="hide" data-index="{{ index }}" hover-class="select-style" hover-stay-time="100">
+        <view class="CarList-left">
+          <view class="CarList-left-top">
+            <image src="../../../../icon/CarAddOK.png" mode="widthFix"></image>
+          </view>
+          <view class="CarList-left-bottom"><text>牌号：{{ item.carName }}</text></view>
+        </view>
+        <view class="delCar {{ CarIndex==index? 'delCarHover':'' }}"  data-tb_id="{{ item._id }}" catchtap="delCar" hover-class="select-del" hover-stay-time="100">删除</view>
+      </view>
+    </view>
+  </view>
+</view>
